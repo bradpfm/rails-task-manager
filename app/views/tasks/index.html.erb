@@ -4,11 +4,14 @@
 <li>
   <% if task.completed %>
     <input type="checkbox" checked><%= link_to task.title, task_path(task) %>
+ <%= link_to "Delete Task", task_path(task), method: :delete, data: {confirm: "Are you sure?"}%>
   <% else %>
     <input type="checkbox"><%= link_to task.title, task_path(task)%>
+    <%= link_to "Delete Task", task_path(task), method: :delete, data: {confirm: "Are you sure?"}%>
   <% end %>
-</li>
+ 
 <% end %>
+<p></p>
 </ul>
 <%= link_to "Add a new task", new_path%>
 
